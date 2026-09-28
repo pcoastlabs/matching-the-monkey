@@ -120,10 +120,23 @@ def main() -> None:
                                    round(war, 2), gp)
     all_tags = sorted({t for d in hist.values() for t in d})
 
+    # last NHL team (2025-26 roster snapshots) for players with no
+    # current team (retired/UFA) so the page can show faint context
+    last_team_of = {}
+    rosters_dir = REPO.parent / "season_2025_26" / "rosters"
+    if rosters_dir.is_dir():
+        import json as _json
+        for f in sorted(rosters_dir.glob("*.json")):
+            j = _json.loads(f.read_text(encoding="utf-8-sig"))
+            for grp in ("forwards", "defensemen", "goalies"):
+                for pl in j.get(grp, []):
+                    last_team_of[str(pl["id"])] = f.stem.split("_")[0].upper()
+
     proj = list(csv.DictReader(
         open(DATA / "projections_2026_27.csv", encoding="utf-8-sig")))
     for r in proj:
         r["team"] = team_of.get(r["pid"], "")
+        r["last_team"] = "" if r["team"] else last_team_of.get(r["pid"], "")
         for tag in all_tags:
             hit = hist.get(r["pid"], {}).get(tag)
             r[f"v{tag}"] = hit[0] if hit else None

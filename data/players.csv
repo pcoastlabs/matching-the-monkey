@@ -220,7 +220,7 @@ pid,first_name,last_name,position,birth_date,team,shoots
 8475745,Charlie,Coyle,C,1992-03-02,CBJ,R
 8475747,Patrik,Nemeth,D,1992-02-08,,L
 8475750,Jon,Merrill,D,1992-02-03,,L
-8475752,Tyler,Pitlick,C,1991-11-01,,R
+8475752,Tyler,Pitlick,C,1991-11-01,MIN,R
 8475753,Justin,Faulk,D,1992-03-20,DET,R
 8475754,Brock,Nelson,C,1991-10-15,COL,L
 8475755,Alexander,Petrovic,D,1992-03-03,FLA,R
@@ -372,7 +372,7 @@ pid,first_name,last_name,position,birth_date,team,shoots
 8476889,Radek,Faksa,C,1994-01-09,DAL,L
 8476891,Matt,Grzelcyk,D,1994-01-05,BUF,L
 8476892,Colton,Parayko,D,1993-05-12,STL,R
-8476897,Oskar,Sundqvist,C,1994-03-23,,R
+8476897,Oskar,Sundqvist,C,1994-03-23,STL,R
 8476899,Matt,Murray,G,1994-05-25,,L
 8476902,Esa,Lindell,D,1994-05-23,DAL,L
 8476903,Jon,Gillies,G,1994-01-22,,L
@@ -444,7 +444,7 @@ pid,first_name,last_name,position,birth_date,team,shoots
 8477361,Cal,Petersen,G,1994-10-19,,R
 8477365,Connor,Clifton,D,1995-04-28,BOS,R
 8477369,Carson,Soucy,D,1994-07-27,,L
-8477380,Jonny,Brodzinski,C,1993-06-19,,R
+8477380,Jonny,Brodzinski,C,1993-06-19,WSH,R
 8477384,Joshua,Brown,D,1994-01-21,,R
 8477392,Hudson,Fasching,R,1995-07-28,,R
 8477401,John,Hayden,C,1995-02-14,,R
@@ -465,7 +465,7 @@ pid,first_name,last_name,position,birth_date,team,shoots
 8477444,Andre,Burakovsky,L,1995-02-09,OTT,L
 8477446,Michael,McCarron,C,1995-03-07,MIN,R
 8477447,Shea,Theodore,D,1995-08-03,VGK,L
-8477450,Jason,Dickinson,C,1995-07-04,,L
+8477450,Jason,Dickinson,C,1995-07-04,EDM,L
 8477451,Ryan,Hartman,R,1994-09-20,MIN,R
 8477454,Adam,Erne,L,1995-04-20,,L
 8477456,J.T.,Compher,L,1995-04-08,DET,R
@@ -498,7 +498,7 @@ pid,first_name,last_name,position,birth_date,team,shoots
 8477499,Rasmus,Ristolainen,D,1994-10-27,PHI,R
 8477500,Bo,Horvat,C,1995-04-05,NYI,L
 8477501,Valeri,Nichushkin,R,1995-03-04,CBJ,L
-8477503,Max,Domi,C,1995-03-02,,L
+8477503,Max,Domi,C,1995-03-02,TOR,L
 8477504,Josh,Morrissey,D,1995-03-28,WPG,L
 8477505,Alexander,Wennberg,C,1994-09-22,SJS,L
 8477506,Ryan,Pulock,D,1994-10-06,NYI,R
@@ -509,7 +509,7 @@ pid,first_name,last_name,position,birth_date,team,shoots
 8477520,Jean-Sebastien,Dea,C,1994-02-08,,
 8477527,Ross,Johnston,L,1994-02-18,STL,L
 8477541,Dakota,Mermis,D,1994-01-05,,L
-8477573,Nathan,Walker,L,1994-02-07,,L
+8477573,Nathan,Walker,L,1994-02-07,STL,L
 8477631,Brandon,Baddock,L,1995-03-29,,L
 8477810,Joel,Hanley,D,1991-06-08,CGY,L
 8477831,Pheonix,Copley,G,1992-01-18,,L
@@ -585,7 +585,7 @@ pid,first_name,last_name,position,birth_date,team,shoots
 8478051,Max,Willman,C,1995-02-13,,L
 8478055,Gustav,Forsling,D,1996-06-12,FLA,L
 8478056,Clark,Bishop,C,1996-03-29,,L
-8478057,Dakota,Joshua,C,1996-05-15,,L
+8478057,Dakota,Joshua,C,1996-05-15,TOR,L
 8478058,CJ,Suess,L,1994-03-17,,L
 8478062,Dysin,Mayo,D,1996-08-17,,R
 8478067,Oskar,Lindblom,L,1996-08-15,,L
@@ -644,7 +644,7 @@ pid,first_name,last_name,position,birth_date,team,shoots
 8478442,Cooper,Marody,C,1996-12-20,,R
 8478443,Brandon,Carlo,D,1996-11-26,STL,R
 8478444,Brock,Boeser,R,1997-02-25,VAN,R
-8478445,Mathew,Barzal,C,1997-05-26,,R
+8478445,Mathew,Barzal,C,1997-05-26,NYI,R
 8478446,Glenn,Gawdin,C,1997-03-25,,R
 8478447,Nick,Merkley,R,1997-05-23,,R
 8478449,Roope,Hintz,C,1996-11-17,DAL,L
@@ -714,7 +714,7 @@ pid,first_name,last_name,position,birth_date,team,shoots
 8478891,Mason,Appleton,C,1996-01-15,DET,R
 8478902,Erik,Kallgren,G,1996-10-14,,L
 8478903,Adam,Huska,G,1997-05-12,,L
-8478904,Steven,Lorentz,C,1996-04-13,,L
+8478904,Steven,Lorentz,C,1996-04-13,TOR,L
 8478905,Ivan,Fedotov,G,1996-11-28,,L
 8478906,Markus,Nutivaara,D,1994-06-06,,L
 8478911,Matt,Roy,D,1995-03-01,WSH,R
@@ -730,7 +730,7 @@ pid,first_name,last_name,position,birth_date,team,shoots
 8478975,Mason,Marchment,L,1995-06-18,SJS,L
 8478996,Adam,Brooks,C,1996-05-06,,L
 8479022,Rodrigo,Abols,C,1996-01-05,,L
-8479026,Philippe,Myers,D,1997-01-25,,R
+8479026,Philippe,Myers,D,1997-01-25,TOR,R
 8479066,Ryan,Lomberg,L,1994-12-09,CBJ,L
 8479193,Casey,DeSmith,G,1991-08-13,DAL,L
 8479249,Andrew,Poturalski,C,1994-01-14,,R
@@ -738,7 +738,7 @@ pid,first_name,last_name,position,birth_date,team,shoots
 8479289,Ethan,Prow,D,1992-11-17,,R
 8479291,Kevin,Rooney,C,1993-05-21,,L
 8479292,Charlie,Lindgren,G,1993-12-18,WSH,R
-8479293,Brandon,Tanev,L,1991-12-31,,L
+8479293,Brandon,Tanev,L,1991-12-31,UTA,L
 8479304,Kyle,Criscuolo,C,1992-05-05,,R
 8479312,Alex,Lyon,G,1992-12-09,BUF,L
 8479313,Zach,Sawchenko,G,1997-12-30,,L
@@ -796,7 +796,7 @@ pid,first_name,last_name,position,birth_date,team,shoots
 8479387,Keaton,Middleton,D,1998-02-10,COL,L
 8479388,Riley,Stillman,D,1998-03-09,,L
 8479390,Taylor,Raddysh,R,1998-02-18,NYR,R
-8479393,Noah,Gregor,L,1998-07-28,,L
+8479393,Noah,Gregor,L,1998-07-28,WPG,L
 8479394,Carter,Hart,G,1998-08-13,VGK,L
 8479395,Dennis,Cholowski,D,1998-02-15,,L
 8479398,Samuel,Girard,D,1998-05-12,PIT,L
@@ -924,7 +924,7 @@ pid,first_name,last_name,position,birth_date,team,shoots
 8480053,Sasha,Chmelevski,C,1999-06-09,,R
 8480054,Reilly,Walsh,D,1999-04-21,MTL,R
 8480056,Jack,Rathbone,D,1999-05-20,BUF,L
-8480058,Pierre-Olivier,Joseph,D,1999-07-01,,L
+8480058,Pierre-Olivier,Joseph,D,1999-07-01,CAR,L
 8480060,Scott,Reedy,C,1999-04-04,,R
 8480064,Josh,Norris,C,1999-05-05,BUF,L
 8480068,Ryan,Poehling,C,1999-01-03,ANA,L
@@ -951,7 +951,7 @@ pid,first_name,last_name,position,birth_date,team,shoots
 8480191,Matt,Villalta,G,1999-06-03,,L
 8480192,Johnathan,Kovacevic,D,1997-07-12,NJD,R
 8480193,Daniil,Tarasov,G,1999-03-27,DET,L
-8480196,Jacob,Bryson,D,1997-11-18,,L
+8480196,Jacob,Bryson,D,1997-11-18,DET,L
 8480199,Eetu,Makiniemi,G,1999-04-19,,L
 8480205,Emil,Bemstrom,C,1999-06-01,,R
 8480208,Drake,Batherson,R,1998-04-27,OTT,R
@@ -1010,7 +1010,7 @@ pid,first_name,last_name,position,birth_date,team,shoots
 8480801,Brady,Tkachuk,L,1999-09-16,FLA,L
 8480802,Ryan,McLeod,C,1999-09-21,BUF,L
 8480803,Evan,Bouchard,D,1999-10-20,EDM,R
-8480806,Isac,Lundeström,C,1999-11-06,,L
+8480806,Isac,Lundeström,C,1999-11-06,CBJ,L
 8480807,Mattias,Samuelsson,D,2000-03-14,BUF,L
 8480813,Joe,Veleno,C,2000-01-13,NYR,L
 8480814,Nicolas,Beaudin,D,1999-10-07,,L
@@ -1049,7 +1049,7 @@ pid,first_name,last_name,position,birth_date,team,shoots
 8480867,Kevin,Mandolese,G,2000-08-22,,L
 8480870,Bo,Groulx,C,2000-02-06,TOR,L
 8480871,Adam,Boqvist,D,2000-08-15,,R
-8480873,Rasmus,Sandin,D,2000-03-07,,L
+8480873,Rasmus,Sandin,D,2000-03-07,WSH,L
 8480874,Adam,Ginning,D,2000-01-13,,L
 8480876,Curtis,Douglas,C,2000-03-06,SEA,L
 8480878,Nils,Lundkvist,D,2000-07-27,DAL,R
@@ -1249,19 +1249,19 @@ pid,first_name,last_name,position,birth_date,team,shoots
 8482078,Lucas,Raymond,L,2002-03-28,DET,R
 8482079,Marco,Rossi,C,2001-09-23,VAN,L
 8482081,Sean,Farrell,C,2001-11-02,ANA,L
-8482087,Kaiden,Guhle,D,2002-01-18,,L
+8482087,Kaiden,Guhle,D,2002-01-18,MTL,L
 8482088,Justin,Sourdif,C,2002-03-24,WSH,R
 8482089,Jake,Neighbours,L,2002-03-29,STL,L
-8482090,Jack,Finley,C,2002-09-02,,R
+8482090,Jack,Finley,C,2002-09-02,STL,R
 8482092,Ridly,Greig,C,2002-08-08,OTT,L
-8482093,Seth,Jarvis,C,2002-02-01,,R
+8482093,Seth,Jarvis,C,2002-02-01,CAR,R
 8482094,Daemon,Hunt,D,2002-05-15,MIN,L
 8482095,Tyler,Kleven,D,2002-01-10,OTT,L
 8482097,Jack,Quinn,R,2001-09-19,BUF,R
-8482100,Alexander,Nikishin,D,2001-10-02,,L
+8482100,Alexander,Nikishin,D,2001-10-02,CAR,L
 8482101,Danil,Gushchin,L,2002-02-06,,L
 8482102,Vasily,Ponomarev,C,2002-03-13,,
-8482103,Ozzy,Wiesblatt,C,2002-03-09,,R
+8482103,Ozzy,Wiesblatt,C,2002-03-09,NSH,R
 8482105,Jake,Sanderson,D,2002-07-08,OTT,L
 8482107,Mike,Benning,D,2002-01-05,,R
 8482109,Alexis,Lafrenière,L,2001-10-11,NYR,L
@@ -1269,7 +1269,7 @@ pid,first_name,last_name,position,birth_date,team,shoots
 8482111,Justin,Barron,D,2001-11-15,STL,R
 8482113,Anton,Lundell,C,2001-10-03,FLA,L
 8482116,Tim,Stützle,C,2002-01-15,OTT,L
-8482117,Lukas,Reichel,L,2002-05-17,,L
+8482117,Lukas,Reichel,L,2002-05-17,BOS,L
 8482118,Sam,Colangelo,R,2001-12-26,ANA,R
 8482122,Brock,Faber,D,2002-08-22,MIN,R
 8482123,Drew,Commesso,G,2002-07-19,,
@@ -1333,7 +1333,7 @@ pid,first_name,last_name,position,birth_date,team,shoots
 8482451,Mikael,Pyyhtia,L,2001-12-17,,L
 8482452,Elliot,Desnoyers,L,2002-01-21,,L
 8482460,Matt,Rempe,C,2002-06-29,NYR,R
-8482470,Ilya,Solovyov,D,2000-07-20,,L
+8482470,Ilya,Solovyov,D,2000-07-20,PIT,L
 8482475,Egor,Chinakhov,R,2001-02-01,PIT,L
 8482476,Emil,Heineman,L,2001-11-16,NYI,L
 8482479,Trevor,Kuntar,C,2001-06-20,,L
@@ -1345,9 +1345,9 @@ pid,first_name,last_name,position,birth_date,team,shoots
 8482515,Artur,Akhtyamov,G,2001-10-31,,L
 8482516,Matthew,Kessel,D,2000-06-23,NYI,R
 8482525,Ryan,Tverberg,C,2002-01-30,,
-8482623,Josh,Dunne,C,1998-12-08,,L
+8482623,Josh,Dunne,C,1998-12-08,WSH,L
 8482624,Daniil,Miromanov,D,1997-07-11,,R
-8482634,Alex,Steeves,C,1999-12-10,,L
+8482634,Alex,Steeves,C,1999-12-10,BOS,L
 8482635,Mike,Hardman,L,1999-02-05,,L
 8482641,Matt,Kiersted,D,1998-04-14,,L
 8482652,Walker,Duehr,R,1997-11-23,,R
@@ -1392,7 +1392,7 @@ pid,first_name,last_name,position,birth_date,team,shoots
 8482751,Ryan,Winterton,C,2003-09-04,SEA,R
 8482758,Ville,Koivunen,R,2003-06-13,PIT,L
 8482761,Carl,Lindbom,G,2003-05-20,,L
-8482762,Simon,Edvinsson,D,2003-02-05,,L
+8482762,Simon,Edvinsson,D,2003-02-05,DET,L
 8482763,Fabian,Lysell,R,2003-01-19,COL,
 8482765,Isak,Rosen,R,2003-03-15,WPG,L
 8482766,William,Stromgren,L,2003-06-07,,
@@ -1421,10 +1421,10 @@ pid,first_name,last_name,position,birth_date,team,shoots
 8482874,Jacob,Melanson,R,2003-04-22,SEA,R
 8482877,Jaroslav,Chmelar,R,2003-07-20,NYR,R
 8482896,Tyson,Kozak,C,2002-12-29,BUF,L
-8482911,Joel,Nystrom,D,2002-05-14,,R
+8482911,Joel,Nystrom,D,2002-05-14,CAR,R
 8482929,Emil,Lilleberg,D,2001-02-02,TBL,L
 8482941,Shane,Lachance,L,2003-08-30,,
-8482947,Zakhar,Bardakov,C,2001-02-24,,L
+8482947,Zakhar,Bardakov,C,2001-02-24,COL,L
 8482949,Arsenii,Sergeev,G,2002-12-16,,
 8482953,Taylor,Makar,L,2001-03-13,COL,
 8482964,Arber,Xhekaj,D,2001-01-30,MTL,L
@@ -1441,7 +1441,7 @@ pid,first_name,last_name,position,birth_date,team,shoots
 8483397,Marc,McLaughlin,C,1999-07-26,NJD,R
 8483398,Declan,Carlile,D,2000-05-18,PIT,L
 8483401,Marc,Johnstone,R,1996-06-19,,
-8483406,Taylor,Ward,R,1998-03-31,,R
+8483406,Taylor,Ward,R,1998-03-31,LAK,R
 8483407,Brandon,Scanlin,D,1999-06-02,,L
 8483424,Owen,Beck,C,2004-02-03,,R
 8483425,Lian,Bichsel,D,2004-05-18,DAL,L
@@ -1484,7 +1484,7 @@ pid,first_name,last_name,position,birth_date,team,shoots
 8483503,Owen,Pickering,D,2004-01-27,,
 8483505,Matthew,Poitras,C,2004-03-10,,R
 8483506,Sam,Rinzel,D,2004-06-25,CHI,R
-8483510,Elias,Salomonsson,D,2004-08-31,,R
+8483510,Elias,Salomonsson,D,2004-08-31,WPG,R
 8483512,Matt,Savoie,C,2004-01-01,EDM,R
 8483513,Reid,Schaefer,L,2003-09-21,NSH,L
 8483515,Juraj,Slafkovský,L,2004-03-30,MTL,L
@@ -1546,10 +1546,10 @@ pid,first_name,last_name,position,birth_date,team,shoots
 8484135,Parker,Ford,C,2000-07-20,,R
 8484136,Max,Sasson,C,2000-09-05,VAN,L
 8484142,Denver,Barkey,C,2005-04-27,PHI,L
-8484144,Connor,Bedard,C,2005-07-17,,R
+8484144,Connor,Bedard,C,2005-07-17,CHI,R
 8484145,Zach,Benson,L,2005-05-12,BUF,L
 8484148,Oliver,Bonk,D,2005-01-09,,R
-8484149,Gavin,Brindley,C,2004-10-05,,R
+8484149,Gavin,Brindley,C,2004-10-05,COL,R
 8484150,Hunter,Brzustewicz,D,2004-11-29,CGY,R
 8484152,Luca,Cagnoni,D,2004-12-21,SJS,
 8484153,Leo,Carlsson,C,2004-12-26,ANA,L
@@ -1560,7 +1560,7 @@ pid,first_name,last_name,position,birth_date,team,shoots
 8484168,Oscar,Fisker Molgaard,C,2005-02-18,,
 8484169,Drew,Fortescue,D,2005-04-28,,L
 8484170,Jacob,Fowler,G,2004-11-24,,L
-8484177,Lenni,Hameenaho,R,2004-11-07,,R
+8484177,Lenni,Hameenaho,R,2004-11-07,NJD,R
 8484180,Samuel,Honzek,L,2004-11-12,CGY,L
 8484185,Nick,Lardis,L,2005-07-08,CHI,L
 8484186,Ryan,Leonard,R,2005-01-21,WSH,R
@@ -1573,7 +1573,7 @@ pid,first_name,last_name,position,birth_date,team,shoots
 8484221,Calum,Ritchie,C,2005-01-21,NYI,R
 8484223,Axel,Sandin-Pellikka,D,2005-03-11,DET,R
 8484227,Will,Smith,C,2005-03-17,SJS,R
-8484230,Otto,Stenberg,C,2005-05-29,,L
+8484230,Otto,Stenberg,C,2005-05-29,STL,L
 8484234,Aydar,Suniev,L,2004-11-16,CGY,L
 8484240,Tom,Willander,D,2005-02-09,VAN,R
 8484241,Matthew,Wood,R,2005-02-06,NSH,R
