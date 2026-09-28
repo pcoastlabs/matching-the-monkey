@@ -94,14 +94,26 @@ def main() -> None:
     print(f"wrote {OUT.relative_to(REPO)}")
 
     team_of = {}
+    pos_of = {}
+    shoots_of = {}
     with open(DATA / "players.csv", encoding="utf-8-sig",
               newline="") as f:
         for r in csv.DictReader(f):
             team_of[r["pid"]] = r.get("team", "")
+            pos_of[r["pid"]] = r.get("position", "")
+            shoots_of[r["pid"]] = r.get("shoots", "")
     proj = list(csv.DictReader(
         open(DATA / "projections_2026_27.csv", encoding="utf-8-sig")))
     for r in proj:
         r["team"] = team_of.get(r["pid"], "")
+        pos = pos_of.get(r["pid"], "") or r["position_group"]
+        if pos == "D":
+            # split by shot side, the usual convention
+            pos = {"L": "LD", "R": "RD"}.get(
+                shoots_of.get(r["pid"], ""), "D")
+        else:
+            pos = {"C": "C", "L": "LW", "R": "RW"}.get(pos, pos)
+        r["pos"] = pos
     PROJ_OUT.write_text(json.dumps(proj), encoding="utf-8")
     print(f"wrote {PROJ_OUT.relative_to(REPO)} ({len(proj)} skaters)")
 
