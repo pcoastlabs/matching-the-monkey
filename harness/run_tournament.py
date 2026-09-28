@@ -104,7 +104,11 @@ _season_of_year[2025] = "season_2025_26"
 with open(DATA / "ours_values.csv", encoding="utf-8-sig",
           newline="") as _f:
     for _r in csv.DictReader(_f):
-        _sname = _season_of_year[int(_r["season"])]
+        # the values file carries the full published history (2010-11
+        # on); the tournament protocol uses only its stated seasons
+        _sname = _season_of_year.get(int(_r["season"]))
+        if _sname is None:
+            continue
         pv[_sname][_r["pid"]] = {
             "position": _r["position"],
             "games_played": int(_r["gp"]),

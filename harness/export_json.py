@@ -102,22 +102,33 @@ def main() -> None:
             team_of[r["pid"]] = r.get("team", "")
             pos_of[r["pid"]] = r.get("position", "")
             shoots_of[r["pid"]] = r.get("shoots", "")
-    shown_seasons = sorted(ours.keys())      # SEASONS + the launch season
-    per_season = {}
-    for sname in shown_seasons:
-        per_season[sname] = {str(v[3]): (v[0], v[1])
-                             for v in ours[sname].values()}
+    # full published history (2010-11 on), straight from the values
+    # file; display keeps the 30-GP floor the rates convention uses
+    hist = defaultdict(dict)                 # pid -> tag -> (v82, raw, gp)
+    with open(DATA / "ours_values.csv", encoding="utf-8-sig",
+              newline="") as f:
+        for r in csv.DictReader(f):
+            if r["position"] == "G":
+                continue
+            gp = int(r["gp"])
+            if gp < 30:
+                continue
+            y = int(r["season"])
+            tag = f"{str(y)[2:]}{str(y + 1)[2:]}"
+            war = float(r["war_indiv"])
+            hist[r["pid"]][tag] = (round(war / gp * 82, 2),
+                                   round(war, 2), gp)
+    all_tags = sorted({t for d in hist.values() for t in d})
 
     proj = list(csv.DictReader(
         open(DATA / "projections_2026_27.csv", encoding="utf-8-sig")))
     for r in proj:
         r["team"] = team_of.get(r["pid"], "")
-        for sname in shown_seasons:
-            tag = sname[9:11] + sname[12:14]        # season_2021_22 -> 2122
-            hit = per_season[sname].get(r["pid"])
-            r[f"v{tag}"] = round(hit[0], 2) if hit else None
-            r[f"r{tag}"] = round(hit[0] * hit[1] / 82, 2) if hit else None
-            r[f"gp{tag}"] = hit[1] if hit else None
+        for tag in all_tags:
+            hit = hist.get(r["pid"], {}).get(tag)
+            r[f"v{tag}"] = hit[0] if hit else None
+            r[f"r{tag}"] = hit[1] if hit else None
+            r[f"gp{tag}"] = hit[2] if hit else None
         pos = pos_of.get(r["pid"], "") or r["position_group"]
         if pos == "D":
             # split by shot side, the usual convention
