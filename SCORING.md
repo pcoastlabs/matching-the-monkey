@@ -1,6 +1,6 @@
 # The frozen bet: scoring rules, pre-registered
 
-*Frozen with this repository's `freeze-2026-27` tag, September
+*Frozen September 24 and revised once before opening night; graded against the `freeze-2026-27r2` tag, September
 2026, before NHL opening night. These rules do not change after
 the freeze; in April the only new input is the season itself.*
 
@@ -69,3 +69,13 @@ If a source changes its export format between now and April,
 the April writeup documents the change and the conversion used.
 Drift affects ingestion only; frozen files, the protocol, and
 these rules do not change.
+
+## Revision note (Sept 28, 2026, before opening night)
+
+The frozen projections were revised once, pre-season: the age
+deltas are now fit on the full published history (2010-11 on)
+after our review found thin-cell artifacts in the five-season
+curve (details in the freeze script's docstring and ERRATA.md).
+The original file remains in git history under the freeze-2026-27
+tag; the graded file is tagged freeze-2026-27r2. No revision of
+any kind occurs after opening night.

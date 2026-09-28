@@ -39,3 +39,18 @@ Consequences:
 The population rule itself verified cleanly: taking playoff
 games into account, our 661 skaters match the league's 30-plus
 games list one for one apart from Bunting.
+
+## Pre-season freeze revision (Sept 28, 2026)
+
+Reviewing the projections against the newly published full history
+exposed two small-sample artifacts in the age curve used by the
+original freeze: the (D,19) cell was empty — teenage defensemen
+received no age adjustment at all — and (F,21) was overstated
+(+0.55 on three transitions vs +0.32 on fifteen). The freeze was
+regenerated with age deltas fit on the full published history,
+before opening night; 655 of 661 projections moved, most by under
+0.1 wins. The original stays in git history (tag freeze-2026-27);
+the graded file is freeze-2026-27r2. The tournament tables are
+unaffected — their published recipe and numbers are unchanged and
+still reproduce. This is the last change: after opening night the
+file is immutable, whatever we find.
