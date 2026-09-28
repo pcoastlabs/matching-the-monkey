@@ -98,6 +98,8 @@ that the freeze is the stated recipe and nothing else. The
 scoring rules are pre-registered in [SCORING.md](SCORING.md). In
 April 2027 the table reruns on the season that actually
 happened. If we lose to the monkey, that gets published too.
+Data issues found after the freeze are recorded in
+[ERRATA.md](ERRATA.md).
 
 ## License
 
