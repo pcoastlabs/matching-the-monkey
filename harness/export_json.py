@@ -116,6 +116,7 @@ def main() -> None:
             tag = sname[9:11] + sname[12:14]        # season_2021_22 -> 2122
             hit = per_season[sname].get(r["pid"])
             r[f"v{tag}"] = round(hit[0], 2) if hit else None
+            r[f"r{tag}"] = round(hit[0] * hit[1] / 82, 2) if hit else None
             r[f"gp{tag}"] = hit[1] if hit else None
         pos = pos_of.get(r["pid"], "") or r["position_group"]
         if pos == "D":
