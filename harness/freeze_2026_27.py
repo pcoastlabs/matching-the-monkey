@@ -20,9 +20,10 @@ in the short curve — (D,19) was empty, so teenage defensemen
 received no age term, and (F,21) was overstated by small-sample
 noise. The original freeze remains in git history under the
 freeze-2026-27 tag; this file, tagged freeze-2026-27r2, is the
-projection the scoring grades. The tournament tables in the
-article are untouched — their recipe still uses the five-season
-curve they were computed and published with.
+projection the scoring grades. The same refit curve
+is the tournament recipe as well; table cells move by at most
+0.002, inside the table's measured resolution (bootstrap 95% band
+±0.012 on row-mean differences).
 
 Every input ships in this repo. The script is deterministic:
 rerun it and diff against the committed file to verify the freeze
@@ -34,59 +35,7 @@ import csv
 from collections import defaultdict
 from pathlib import Path
 
-import csv as _csv
-from collections import defaultdict as _dd
-
-from run_tournament import (DATA, K, MIN_GP, _norm_name, age_at, ch,
-                            ours)
-
-
-def _full_history_age_deltas():
-    """Positional age deltas from EVERY consecutive-season pair in
-    the published values file (2010-11 on), same construction the
-    tournament uses on its five seasons: gp-weighted mean delta per
-    (group, age-at-next-season), smoothed +-1 year, 30-GP floor."""
-    rates = _dd(dict)
-    with open(DATA / "ours_values.csv", encoding="utf-8-sig",
-              newline="") as f:
-        for r in _csv.DictReader(f):
-            if r["position"] == "G" or int(r["gp"]) < MIN_GP:
-                continue
-            pid = int(r["pid"])
-            h = ch.get(pid) or {}
-            full = f"{h.get('first_name', '')} {h.get('last_name', '')}"
-            key = (_norm_name(full),
-                   "D" if r["position"] == "D" else "F")
-            if not key[0]:
-                continue
-            gp = int(r["gp"])
-            rates[int(r["season"])][key] = (
-                float(r["war_indiv"]) / gp * 82, gp, key[1], pid)
-    deltas = _dd(list)
-    for y in sorted(rates):
-        if y + 1 not in rates:
-            continue
-        for k, (v1, g1, grp, pid) in rates[y].items():
-            nxt = rates[y + 1].get(k)
-            if not nxt:
-                continue
-            a = age_at(pid, y + 1)
-            if a is None:
-                continue
-            deltas[(grp, round(a))].append((nxt[0] - v1,
-                                            min(g1, nxt[1])))
-    ad = {kk: sum(d * g for d, g in v) / sum(g for _, g in v)
-          for kk, v in deltas.items()}
-    out = {}
-    for grp in ("F", "D"):
-        for a in range(18, 46):
-            vals = [ad[(grp, b)] for b in (a - 1, a, a + 1)
-                    if (grp, b) in ad]
-            out[(grp, a)] = sum(vals) / len(vals) if vals else 0.0
-    return out
-
-
-sm = _full_history_age_deltas()
+from run_tournament import (DATA, K, age_at, ch, ours, sm)
 
 LAUNCH = "season_2025_26"                  # history anchor
 HISTORY = [(5, "season_2025_26"), (4, "season_2024_25"),

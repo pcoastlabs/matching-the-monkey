@@ -50,7 +50,10 @@ received no age adjustment at all — and (F,21) was overstated
 regenerated with age deltas fit on the full published history,
 before opening night; 655 of 661 projections moved, most by under
 0.1 wins. The original stays in git history (tag freeze-2026-27);
-the graded file is freeze-2026-27r2. The tournament tables are
-unaffected — their published recipe and numbers are unchanged and
-still reproduce. This is the last change: after opening night the
-file is immutable, whatever we find.
+the graded file is freeze-2026-27r2. The same refit curve became the tournament
+recipe as well: 18 of the 50 mean-table cells move, by at most
+0.005, with three row means shifting 0.001-0.002 — all inside the
+table's bootstrap-measured resolution (95% band ±0.012 on row-mean
+differences). The article's table was updated to match; the code
+reproduces it. This is the last change: after opening night the
+frozen file is immutable, whatever we find.

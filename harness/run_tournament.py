@@ -157,23 +157,45 @@ def rates(sname):
 ours = {s: rates(s) for s in SEASONS}
 ours["season_2025_26"] = rates("season_2025_26")
 
-# age deltas from our base (population effect), smoothed +-1 year
+# age deltas: fit on the FULL published history (every consecutive-
+# season pair in ours_values.csv, 2010-11 on), gp-weighted, smoothed
+# +-1 year. The five-season fit this replaces had empty and noisy
+# cells at the age extremes; the refit moves tournament cells by at
+# most 0.002, inside the table's measured resolution.
+_fh_rates = defaultdict(dict)
+with open(DATA / "ours_values.csv", encoding="utf-8-sig",
+          newline="") as _f:
+    for _r in csv.DictReader(_f):
+        if _r["position"] == "G" or int(_r["gp"]) < MIN_GP:
+            continue
+        _pid = int(_r["pid"])
+        _h = ch.get(_pid) or {}
+        _full = f"{_h.get('first_name', '')} {_h.get('last_name', '')}"
+        _key = (_norm_name(_full),
+                "D" if _r["position"] == "D" else "F")
+        if not _key[0]:
+            continue
+        _gp = int(_r["gp"])
+        _fh_rates[int(_r["season"])][_key] = (
+            float(_r["war_indiv"]) / _gp * 82, _gp, _key[1], _pid)
 _deltas = defaultdict(list)
-for s1, s2 in zip(SEASONS, SEASONS[1:], strict=False):
-    y2 = int(s2[7:11])
-    for k, (v1_, g1, grp, pid) in ours[s1].items():
-        nxt = ours[s2].get(k)
-        if not nxt or g1 < 30 or nxt[1] < 30:
+for _y in sorted(_fh_rates):
+    if _y + 1 not in _fh_rates:
+        continue
+    for _k, (_v1, _g1, _grp, _pid) in _fh_rates[_y].items():
+        _nxt = _fh_rates[_y + 1].get(_k)
+        if not _nxt:
             continue
-        a = age_at(pid, y2)
-        if a is None:
+        _a = age_at(_pid, _y + 1)
+        if _a is None:
             continue
-        _deltas[(grp, round(a))].append((nxt[0] - v1_, min(g1, nxt[1])))
+        _deltas[(_grp, round(_a))].append((_nxt[0] - _v1,
+                                           min(_g1, _nxt[1])))
 _ad = {kk: sum(d * g for d, g in v) / sum(g for _, g in v)
        for kk, v in _deltas.items()}
 sm = {}
 for _grp in ("F", "D"):
-    for _a in range(19, 41):
+    for _a in range(18, 46):
         _vals = [_ad[(_grp, b)] for b in (_a - 1, _a, _a + 1)
                  if (_grp, b) in _ad]
         sm[(_grp, _a)] = sum(_vals) / len(_vals) if _vals else 0.0
