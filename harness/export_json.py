@@ -93,8 +93,15 @@ def main() -> None:
     OUT.write_text(json.dumps(out, indent=1), encoding="utf-8")
     print(f"wrote {OUT.relative_to(REPO)}")
 
+    team_of = {}
+    with open(DATA / "players.csv", encoding="utf-8-sig",
+              newline="") as f:
+        for r in csv.DictReader(f):
+            team_of[r["pid"]] = r.get("team", "")
     proj = list(csv.DictReader(
         open(DATA / "projections_2026_27.csv", encoding="utf-8-sig")))
+    for r in proj:
+        r["team"] = team_of.get(r["pid"], "")
     PROJ_OUT.write_text(json.dumps(proj), encoding="utf-8")
     print(f"wrote {PROJ_OUT.relative_to(REPO)} ({len(proj)} skaters)")
 
