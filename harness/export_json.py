@@ -102,10 +102,21 @@ def main() -> None:
             team_of[r["pid"]] = r.get("team", "")
             pos_of[r["pid"]] = r.get("position", "")
             shoots_of[r["pid"]] = r.get("shoots", "")
+    shown_seasons = sorted(ours.keys())      # SEASONS + the launch season
+    per_season = {}
+    for sname in shown_seasons:
+        per_season[sname] = {str(v[3]): (v[0], v[1])
+                             for v in ours[sname].values()}
+
     proj = list(csv.DictReader(
         open(DATA / "projections_2026_27.csv", encoding="utf-8-sig")))
     for r in proj:
         r["team"] = team_of.get(r["pid"], "")
+        for sname in shown_seasons:
+            tag = sname[9:11] + sname[12:14]        # season_2021_22 -> 2122
+            hit = per_season[sname].get(r["pid"])
+            r[f"v{tag}"] = round(hit[0], 2) if hit else None
+            r[f"gp{tag}"] = hit[1] if hit else None
         pos = pos_of.get(r["pid"], "") or r["position_group"]
         if pos == "D":
             # split by shot side, the usual convention
