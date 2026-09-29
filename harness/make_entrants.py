@@ -34,7 +34,9 @@ from pathlib import Path
 REPO = Path(__file__).resolve().parent.parent
 DATA = REPO / "data"
 OUT = DATA / "entrants"
-YEARS = range(2019, 2026)
+import os as _os
+YEARS = (range(2010, 2026) if _os.environ.get("PHM_FULL_HISTORY")
+         else range(2019, 2026))
 
 
 def parse_season(s):

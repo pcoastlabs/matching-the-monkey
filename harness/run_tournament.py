@@ -64,6 +64,28 @@ YEARS = list(range(2019, 2026))          # marcel history window
 TRANSITIONS = [2022, 2023, 2024]         # N -> N+1
 REQUIRED_YEARS = {2022, 2023, 2024, 2025}
 
+# Full-history mode (PHM_FULL_HISTORY=1): the identical recipe run
+# over every transition of the published history (2010-11 on), for
+# the stats page's historical table. The graded protocol above is
+# untouched; this only widens the ranges and applies the
+# short-season GP floor scaling (48/70/56-game seasons).
+import os as _os
+FULL_HISTORY = bool(_os.environ.get("PHM_FULL_HISTORY"))
+_SEASON_LEN = {2012: 48, 2019: 70, 2020: 56}
+if FULL_HISTORY:
+    SEASONS = [f"season_{y}_{str(y + 1)[2:]}" for y in range(2010, 2025)]
+    YEARS = list(range(2007, 2026))
+    TRANSITIONS = list(range(2010, 2025))
+    REQUIRED_YEARS = set(range(2010, 2026))
+
+
+def floor_gp(year):
+    """Per-season GP floor: MIN_GP scaled to season length in
+    full-history mode; exactly MIN_GP in the graded protocol."""
+    if not FULL_HISTORY:
+        return MIN_GP
+    return max(15, round(MIN_GP * _SEASON_LEN.get(year, 82) / 82))
+
 
 def _norm_name(s: str) -> str:
     """Join key: casefold, strip accents/punctuation/(D) suffixes."""
@@ -143,9 +165,10 @@ def age_at(pid, year):
 
 def rates(sname):
     out = {}
+    _fl = floor_gp(int(sname[7:11]))
     for pid_s, rec in pv[sname].items():
         gp = rec.get("games_played") or 0
-        if rec.get("position") == "G" or gp < MIN_GP:
+        if rec.get("position") == "G" or gp < _fl:
             continue
         tot = (rec.get("WAR_indiv_component", 0) or 0)
         out[key_of(pid_s, rec)] = (tot / gp * 82, gp,
@@ -250,7 +273,7 @@ def load_entrant(path):
             agg[year][key][0] += gp
             agg[year][key][1] += float(r["value"] or 0)
     return {y: {k: (v[1] / v[0] * 82, v[0]) for k, v in d.items()
-                if v[0] >= MIN_GP} for y, d in agg.items()}
+                if v[0] >= floor_gp(y)} for y, d in agg.items()}
 
 
 def marcel(series, year, age_scale=1.0):

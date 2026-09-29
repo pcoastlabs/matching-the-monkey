@@ -24,7 +24,10 @@ from run_tournament import (
     marcel, ours, ours_marcel,
 )
 
-OUT = DATA / "tournament.json"
+import os as _os
+OUT = DATA / ("tournament_full.json"
+              if _os.environ.get("PHM_FULL_HISTORY")
+              else "tournament.json")
 PROJ_OUT = DATA / "projections.json"
 
 
