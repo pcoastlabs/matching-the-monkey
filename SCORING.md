@@ -79,3 +79,13 @@ curve (details in the freeze script's docstring and ERRATA.md).
 The original file remains in git history under the freeze-2026-27
 tag; the graded file is tagged freeze-2026-27r2. No revision of
 any kind occurs after opening night.
+
+## Full-history mode
+
+`PHM_FULL_HISTORY=1` runs the identical recipe over every transition
+of the published history (2010-11 on): same Marcel, same age curve,
+same strict common samples, with the GP floor scaled to season
+length for the 48-, 70- and 56-game seasons. It writes
+`tournament_full.json`, which the site's historical table renders.
+It is context, not the graded protocol: the 2026-27 freeze is graded
+against the three-transition protocol table only.
